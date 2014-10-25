@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="txManager" class="dao.impl.jdbc.tx.TransactionManagerImpl" scope="singleton"/>
+
+    <bean id="productDao" class="dao.impl.jdbc.ProductDaoJDBCExternalTxImpl" scope="singleton">
+        <property name="dataSource" ref="txManager"/>
+    </bean>
+
+</beans>

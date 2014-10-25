@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+    <bean id="aspect-profiler" class="aspect.SimpleProfiler"/>
+    <bean id="aspect-logger" class="aspect.SimpleLogger"/>
+    <bean id="aspect-exceptions-logger" class="aspect.SimpleExceptionsLogger"/>
+    <aop:config>
+        <aop:aspect ref="aspect-profiler">
+            <aop:pointcut id="selectById" expression="execution(* dao.ProductDao.selectById(int))"/>
+            <aop:around pointcut-ref="selectById" method="profile"/>
+        </aop:aspect>
+
+        <aop:aspect ref="aspect-logger">
+            <aop:pointcut id="any-dao-methods" expression="execution(* dao.ProductDao.*(..))"/>
+            <aop:around pointcut-ref="any-dao-methods" method="log"/>
+        </aop:aspect>
+
+        <aop:aspect ref="aspect-exceptions-logger">
+            <aop:pointcut id="any-public-methods" expression="execution(public * *(..))"/>
+            <aop:after-throwing pointcut-ref="any-public-methods" method="logException" throwing="t"/>
+        </aop:aspect>
+    </aop:config>
+
+    <bean id="productDao" class="dao.impl.ProductDaoMock"/>
+
+</beans>

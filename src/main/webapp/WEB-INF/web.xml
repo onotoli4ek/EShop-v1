@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <listener>
+        <listener-class>listener.SpringApplicationContextListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>productController</servlet-name>
+        <servlet-class>controller.ProductControllerExternalTx</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>productController</servlet-name>
+        <url-pattern>/product.do</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>productAddToBucket</servlet-name>
+        <servlet-class>controller.ProductAddToBucketController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productAddToBucket</servlet-name>
+        <url-pattern>/productAddToBucket.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>productAllController</servlet-name>
+        <servlet-class>controller.ProductAllController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productAllController</servlet-name>
+        <url-pattern>/productAll.do</url-pattern>
+    </servlet-mapping>
+
+    <!--<context-param>-->
+        <!--<param-name>contextConfigLocation</param-name>-->
+        <!--<param-value>/appContext-dao-external-Tx.xml</param-value>-->
+    <!--</context-param>-->
+
+
+
+</web-app>

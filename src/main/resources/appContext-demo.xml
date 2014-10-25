@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="demoB_10_20" class="entity.demo.SpringDemoB">
+        <constructor-arg name="x" value="10"/>
+        <constructor-arg name="y" value="20"/>
+    </bean>
+
+    <bean id="demoB_5_5" class="entity.demo.SpringDemoB">
+        <constructor-arg name="x" value="5"/>
+        <constructor-arg name="y" value="5"/>
+    </bean>
+
+    <bean id="demoA" class="entity.demo.SpringDemoA">
+        <property name="intArray">
+            <array>
+                <value>0</value>
+                <value>1</value>
+                <value>2</value>
+            </array>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="key-0" value-ref="demoB_10_20"/>
+                <entry key="key-1" value-ref="demoB_5_5"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>
