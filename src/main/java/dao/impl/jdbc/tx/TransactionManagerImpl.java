@@ -25,9 +25,9 @@ public class TransactionManagerImpl extends BaseDataSourse implements Transactio
         Connection conn = null;
         T result = null;
         try {
-            DriverManager.registerDriver(new Driver());
-            conn = DriverManager.getConnection(JDBC_URL);
-//            conn = dataSource.getConnection();
+//            DriverManager.registerDriver(new Driver());
+//            conn = DriverManager.getConnection(JDBC_URL);
+            conn = dataSource.getConnection();
             conn.setAutoCommit(false);
             connectionHolder.set(conn);
             result = unitOfWork.doInTx();
