@@ -13,8 +13,8 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class ProductDaoJDBCExternalTxImpl implements ProductDao{
-    public static final String JDBC_URL =
-            "jdbc:mysql://127.0.0.1:3306/eshop?user=root&password=tolibasik";
+//    public static final String JDBC_URL =
+//            "jdbc:mysql://127.0.0.1:3306/eshop?user=root&password=tolibasik";
     public static final String SELECT_ALL_SQL =  "SELECT id, productName FROM Products";
     public static final String SELECT_BY_ID_SQL = "SELECT productName FROM Products WHERE id = ?";
     private DataSource dataSource;
@@ -31,8 +31,9 @@ public class ProductDaoJDBCExternalTxImpl implements ProductDao{
         System.out.println("inside selectById");
         PreparedStatement stmt = null;
         ResultSet rs = null;
+        Connection conn = null;
         try {
-//            conn = DriverManager.getConnection(JDBC_URL);
+//            conn = dataSource.getConnection();
 //            conn.setAutoCommit(false);
 //            stmt = conn.prepareStatement(SELECT_BY_ID_SQL);
             stmt = dataSource.getConnection().prepareStatement(SELECT_BY_ID_SQL);
@@ -85,7 +86,7 @@ public class ProductDaoJDBCExternalTxImpl implements ProductDao{
 //                System.out.println("Id" +  result1.getInt("id"));
 //            }
 //        } finally {
-//            connection.close();
+//            connection.shutdown();
 //        }
 //
 //    }

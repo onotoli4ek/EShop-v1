@@ -9,7 +9,7 @@ import javax.servlet.ServletContextListener;
 public class SpringApplicationContextListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        ApplicationContext ac = new ClassPathXmlApplicationContext("/appContext-dao-external-Tx.xml");
+        ApplicationContext ac = new ClassPathXmlApplicationContext("/appContext-dao-BoneCPDataSource.xml");
 
         servletContextEvent.getServletContext().setAttribute("applicationContext", ac);
 

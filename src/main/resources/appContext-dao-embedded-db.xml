@@ -13,10 +13,15 @@
         <jdbc:script location="classpath:test-data.sql"/>
     </jdbc:embedded-database>
 
-    <bean id="txManager" class="dao.impl.jdbc.tx.TransactionManagerImpl" scope="singleton"/>
+    <bean id="poolDataSource" class="com.jolbox.bonecp.BoneCPDataSource" scope="singleton">
+        <property name="datasourceBean" ref="dbDataSource"/>
+    </bean>
 
-    <bean id="productDao" class="dao.impl.jdbc.ProductDaoJDBCExternalTxImpl" scope="singleton">
-        <property name="dataSource" ref="txManager"/>
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="poolDataSource"/>
+    </bean>
+
+    <bean id="productDao" class="dao.impl.jdbc.ProductDaoJDBCExternalTxImpl">
     </bean>
 
 </beans>
