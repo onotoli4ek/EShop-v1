@@ -9,7 +9,6 @@
        http://www.springframework.org/schema/spring-jdbc.xsd">
 
     <bean id="dataSourse" class="dao.impl.jdbc.tx.BCPDataSource" scope="singleton" init-method="init" destroy-method="shutdown">
-    <!--<bean id="dataSourse" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">-->
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
         <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/eshop"/>
         <property name="user" value="root"/>
