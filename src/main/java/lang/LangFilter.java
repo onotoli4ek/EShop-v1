@@ -39,6 +39,7 @@ public class LangFilter implements Filter {
                 }
             }
         };
+        System.out.println("fhgfhf");
         filterChain.doFilter(langRequest, servletResponse);
 
 
