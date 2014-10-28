@@ -8,6 +8,15 @@
         <listener-class>listener.SpringApplicationContextListener</listener-class>
     </listener>
 
+    <filter>
+        <filter-name>langFilter</filter-name>
+        <filter-class>lang.LangFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>langFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>productController</servlet-name>
         <servlet-class>controller.ProductControllerExternalTx</servlet-class>
