@@ -23,7 +23,6 @@ public class ProductAllController extends HttpServlet {
     public static final String PAGE_ERROR = "error.jsp";
 
     TransactionManager txManager;
-//    @Inject("productDao")
     ProductDao productDao;
     @Override
     public void init(ServletConfig config) throws ServletException {
