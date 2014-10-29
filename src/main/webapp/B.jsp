@@ -1,24 +1,17 @@
+<%@ page import="java.util.ResourceBundle" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-<fmt:setLocale value="<%=request.getLocale()%>"/>
-<fmt:setLocale value="${pageContext.request.locale}"/>
-<fmt:setBundle basename="lang/messages"/>
-
 <html>
 <head>
     <title></title>
 </head>
 <body>
-<br/><fmt:message key="hello" />
+<br/><%=ResourceBundle.getBundle("lang/messages", request.getLocale()).getString("hello")%>
 <br/>
 <ul>
-    <li> <a href="./B.jsp">B</a></li>
-    <li> <a href="./C.jsp">C</a></li>
+    <li> <a href="./a.jsp?lang=ru">ru: a.jsp</a></li>
+    <li> <a href="./a.jsp?lang=en">en: a.jsp</a></li>
+    <li> <a href="./b.jsp?lang=ru">ru: b.jsp</a></li>
+    <li> <a href="./b.jsp?lang=en">en: b.jsp</a></li>
 </ul>
-
-
 </body>
 </html>
-

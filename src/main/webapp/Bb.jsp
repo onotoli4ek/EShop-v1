@@ -11,7 +11,7 @@
     <title></title>
 </head>
 <body>
-<br/><fmt:message key="c.hello"/>
+<br/><fmt:message key="hello" />
 <br/>
 <ul>
     <li> <a href="./Bb.jsp">B</a></li>
@@ -21,3 +21,4 @@
 
 </body>
 </html>
+
