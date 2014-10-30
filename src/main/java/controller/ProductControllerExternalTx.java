@@ -20,10 +20,9 @@ public class ProductControllerExternalTx extends HttpServlet {
     public static final String ATTRIBUTE_MODEL_TO_VIEW = "product";
     public static final String PAGE_OK = "product.jsp";
     public static final String PAGE_ERROR = "error.jsp";
-//    @Inject("txManager")
+
     TransactionManager txManager;
-//    @Inject("productDao")
- ProductDao productDao;
+    ProductDao productDao;
 
     @Override
     public void init(ServletConfig config) throws ServletException {

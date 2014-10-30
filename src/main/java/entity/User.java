@@ -8,11 +8,11 @@ public class User implements Serializable {
     private String email;
     private String password;
 
-    public User(int id, String login, String email, String password) {
+    public User(int id, String login, String password, String email) {
         this.id = id;
         this.login = login;
-        this.email = email;
         this.password = password;
+        this.email = email;
     }
 
     public int getId() {

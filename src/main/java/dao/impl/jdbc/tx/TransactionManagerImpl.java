@@ -10,8 +10,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class TransactionManagerImpl extends BaseDataSourse implements TransactionManager{
-    public static final String JDBC_URL =
-            "jdbc:mysql://127.0.0.1:3306/eshop?user=root&password=tolibasik";
+//    public static final String JDBC_URL =
+//            "jdbc:mysql://127.0.0.1:3306/eshop?user=root&password=tolibasik";
     private static ThreadLocal<Connection> connectionHolder = new ThreadLocal<>();
 
     private DataSource dataSource;

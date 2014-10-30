@@ -14,7 +14,7 @@
     </filter>
     <filter-mapping>
         <filter-name>langFilter</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/makeOrder.do</url-pattern>
     </filter-mapping>
 
     <servlet>
@@ -25,6 +25,16 @@
     <servlet-mapping>
         <servlet-name>productController</servlet-name>
         <url-pattern>/product.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registerController</servlet-name>
+        <servlet-class>controller.RegisterNewUserController</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>registerController</servlet-name>
+        <url-pattern>/register.do</url-pattern>
     </servlet-mapping>
 
 

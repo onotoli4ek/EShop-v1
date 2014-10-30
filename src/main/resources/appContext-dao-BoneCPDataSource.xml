@@ -28,4 +28,11 @@
         <property name="dataSource" ref="txManager"/>
     </bean>
 
+    <bean id="validator" class="validator.UserValidatorImpl" scope="singleton"/>
+
+
+    <bean id="userDao" class="dao.impl.jdbc.UserDaoJDBCImpl" scope="singleton">
+        <property name="dataSource" ref="txManager"/>
+    </bean>
+
 </beans>

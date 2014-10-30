@@ -17,6 +17,6 @@ public interface UserDao {
 
     public int deleteById(int id) throws DaoException;
 
-    public void insertNew(User user) throws DaoException, NotUniqueUserLoginException, NotUniqueUserEmailException;
+    public User insertNew(User user) throws DaoException, NotUniqueUserLoginException, NotUniqueUserEmailException;
     
 }

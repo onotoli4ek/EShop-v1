@@ -14,6 +14,7 @@ public class UserValidatorImpl implements UserValidator{
         validateLogin(user.getLogin(), errorMap);
         validatePassword(user.getPassword(), errorMap);
         validateEmail(user.getEmail(), errorMap);
+        System.out.println(errorMap);
         return errorMap;
     }
 
@@ -21,6 +22,7 @@ public class UserValidatorImpl implements UserValidator{
         if (login == null){
             errorMap.put("login", "login == null");
         } else if (login.length() < 3){
+            System.out.println("Error map!");
             errorMap.put("login", "login.length() < 3");
         }
     }

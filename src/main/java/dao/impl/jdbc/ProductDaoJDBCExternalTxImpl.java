@@ -73,20 +73,21 @@ public class ProductDaoJDBCExternalTxImpl implements ProductDao{
 //    public static final String JDBC_URL =
 //            "jdbc:mysql://127.0.0.1:3306/eshop?user=root&password=tolibasik";
 //    public static final String SELECT_ALL_SQL =  "SELECT id, productName FROM products";
+//    static String a = "hh";
 //    public static void main(String[] args) throws SQLException {
 //        Connection connection = null;
 //        try{
 //            connection = DriverManager.getConnection(JDBC_URL);
 //            PreparedStatement stmt = connection.prepareStatement(SELECT_ALL_SQL);
 //            stmt.executeUpdate(
-//                    "INSERT INTO products(productName) values('Helen');");
+//                    "INSERT INTO products(productName) values('" + a + "');");
 //            ResultSet result1 = stmt.executeQuery(
 //                    "SELECT * FROM products;");
 //            while (result1.next()) {
 //                System.out.println("Id" +  result1.getInt("id"));
 //            }
 //        } finally {
-//            connection.shutdown();
+//            connection.close();
 //        }
 //
 //    }

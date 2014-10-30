@@ -11,7 +11,7 @@
 <%--<fmt:setBundle basename="lang/messages"/>--%>
 <br/><a href="/product.do?id=1">product</a>
 <br/><a href="/productAll.do">productAll</a>
-
+<br/><a href="register.jsp">register</a>
 <br/><a href="C.jsp">a.jsp</a>
 </body>
 </html>

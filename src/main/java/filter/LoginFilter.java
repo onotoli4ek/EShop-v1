@@ -48,13 +48,13 @@ public class LoginFilter extends BaseFilter {
         if (login != null && password != null) {
             User user = null;
             try {
-                user = txManager.doInTransaction(new UnitOfWork<User, Exception>() {
+                user = txManager.doInTransaction(new UnitOfWork<User, DaoException>() {
                     @Override
-                    public User doInTx() throws Exception {
+                    public User doInTx() throws DaoException {
                         return userDao.selectByLogin(login);
                     }
                 });
-            } catch (Exception e) {
+            } catch (SQLException | DaoException e) {
                 /*NOP*/
                 throw new RuntimeException(e);
             }
