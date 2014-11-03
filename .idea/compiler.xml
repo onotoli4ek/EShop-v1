@@ -26,10 +26,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="EShop" />
         <module name="MyMaven" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="EShop" target="1.7" />
       <module name="MyMaven" target="1.7" />
     </bytecodeTargetLevel>
   </component>

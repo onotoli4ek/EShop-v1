@@ -2,6 +2,7 @@
   <artifact type="exploded-war" name="EShop:war exploded">
     <output-path>$PROJECT_DIR$/target/MyMaven-1.0-SNAPSHOT</output-path>
     <root id="root">
+      <element id="javaee-facet-resources" facet="EShop/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="EShop" />
@@ -24,9 +25,12 @@
           <element id="library" level="project" name="Maven: com.google.guava:guava:15.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.2" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.29" />
+          <element id="library" level="project" name="Maven: javax.persistence:persistence-api:1.0" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:4.3.7.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final" />
+          <element id="library" level="project" name="Maven: org.hibernate:hibernate:3.2.6.ga" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="EShop/web/Web" />
     </root>
   </artifact>
 </component>
