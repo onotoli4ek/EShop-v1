@@ -48,14 +48,14 @@ public class MyPersistence {
     }
 
     //Criteria
-    public static void selectAll (EntityManager entityManager) {
-        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<JpaUser> criteriaQuery = criteriaBuilder.createQuery(JpaUser.class);
-        Root<JpaUser> root = criteriaQuery.from(JpaUser.class);
-        criteriaQuery.select(root);
-        TypedQuery<JpaUser> typedQuery = entityManager.createQuery(criteriaQuery);
-        List<JpaUser> allUsers = typedQuery.getResultList();
-        System.out.println(">> allUsers " + allUsers);
-    }
+//    public static void selectAll (EntityManager entityManager) {
+//        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+//        CriteriaQuery<JpaUser> criteriaQuery = criteriaBuilder.createQuery(JpaUser.class);
+//        Root<JpaUser> root = criteriaQuery.from(JpaUser.class);
+//        criteriaQuery.select(root);
+//        TypedQuery<JpaUser> typedQuery = entityManager.createQuery(criteriaQuery);
+//        List<JpaUser> allUsers = typedQuery.getResultList();
+//        System.out.println(">> allUsers " + allUsers);
+//    }
 
 }

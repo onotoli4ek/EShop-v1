@@ -1,43 +1,42 @@
 package entity;
 
+
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 // must be serializable to be attribute on session
-@NamedQuery(
-        name = "findAllCustomersWithEmailLike",
-        query = "SELECT u FROM JpaUser u WHERE email LIKE :email"
-)
-@Cacheable
+//@NamedQuery(
+//        name = "findAllCustomersWithEmailLike",
+//        query = "SELECT u FROM JpaUser u WHERE email LIKE :email"
+//)
+//@Cacheable
 @Entity
-@Table(name = "Users")
+@Table( name = "jpausers")
 public class JpaUser implements Serializable {
     @Id
-    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", length = 6, nullable = false)
     private int id;
-    @Column(name = "login")
+    @Column(name = "login", length = 32)
     private String login;
-    @Column(name = "email")
+    @Column(name = "email", length = 32)
     private String email;
     @Column(name = "password")
     private String password;
 
-    public JpaUser(){
 
-    }
-    public JpaUser(int id, String login, String password, String email) {
-        this.id = id;
+    public JpaUser(String login, String password, String email) {
         this.login = login;
         this.password = password;
         this.email = email;
     }
+    public JpaUser(){
+
+    }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getLogin() {
